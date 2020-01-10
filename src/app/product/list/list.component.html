@@ -1,0 +1,36 @@
+<div class="container-fluid">
+<div class="row">
+    <div class="col-sm">
+    <h4>PRODUCTS</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+    <button class="btn btn-primary" style="float: right;" href="#" routerLink="add">ADD NEW</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of crud">
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.price }}</td>
+                    <td>{{ data.comment }}</td>
+                    <td><a (click)="editData(data._id)" class="btn btn-outline-primary">Edit</a></td>
+                    <td><a (click)="deleteData(data._id)" class="btn btn-outline-danger">Delete</a>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
